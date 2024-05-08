@@ -1,10 +1,14 @@
 import React from 'react';
-import { Route, Routes } from 'react-router-dom';
+import { Navigate, Route, Routes } from 'react-router-dom';
 import Logo from '../../assets/Logo.svg?react';
 import LoginForm from './LoginForm';
 import LoginCadastro from './LoginCadastro';
+import { UserContext } from '../../Context/UserContext';
 
 const Login = () => {
+  const { login } = React.useContext(UserContext);
+
+  if (login) return <Navigate to="/" />;
   return (
     <div className="grid grid-cols-2 h-screen p-2">
       <section className="flex items-center justify-center">

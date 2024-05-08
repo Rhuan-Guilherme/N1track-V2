@@ -1,14 +1,20 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Login from './Components/Login/Login';
+import { UserStorage } from './Context/UserContext';
+import HomePage from './Components/Home/HomePage';
+import Header from './Components/Layout/Header';
 
 function App() {
   return (
     <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<h1>Principal</h1>} />
-        <Route path="/login/*" element={<Login />} />
-      </Routes>
+      <UserStorage>
+        <Header />
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/login/*" element={<Login />} />
+        </Routes>
+      </UserStorage>
     </BrowserRouter>
   );
 }

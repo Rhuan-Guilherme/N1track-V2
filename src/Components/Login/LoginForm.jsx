@@ -4,26 +4,17 @@ import styles from './Login.module.css';
 import Input from './Input';
 import Button from './Button';
 import useForm from '../../Hooks/useForm';
-import { GET_TOKEN } from '../../API/api';
+import { UserContext } from '../../Context/UserContext';
 
 const LoginForm = () => {
   const email = useForm('email');
   const senha = useForm();
+  const { data, error, userLogin, loading } = React.useContext(UserContext);
 
   async function handleSubmit(event) {
     event.preventDefault();
     if (email.validate() && senha.validate()) {
-      const { url, options } = GET_TOKEN({
-        email: email.value,
-        senha: senha.value,
-      });
-      try {
-        const response = await fetch(url, options);
-        const json = await response.json();
-        console.log(json);
-      } catch (err) {
-        console.log(err);
-      }
+      await userLogin(email.value, senha.value);
     }
   }
 
@@ -47,7 +38,13 @@ const LoginForm = () => {
       <form onSubmit={handleSubmit} className="mt-10 w-96">
         <Input label="E-mail" type="text" name="email" {...email} />
         <Input label="Senha" type="password" name="senha" {...senha} />
-        <Button>Entrar</Button>
+        {loading ? (
+          <Button disabled>Entrando...</Button>
+        ) : (
+          <Button>Entrar</Button>
+        )}
+
+        {error && <p>{error}</p>}
       </form>
     </section>
   );

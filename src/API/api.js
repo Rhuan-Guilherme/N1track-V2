@@ -1,15 +1,40 @@
 const API_URL = 'http://localhost/API';
 // const API_URL = 'https://roadtrack.com.br/API'
 
-export function GET_TOKEN(body) {
+export function POST_TOKEN(body) {
   return {
     url: API_URL + '/login',
     options: {
       method: 'POST',
-      header: {
+      headers: {
         'Content-type': 'application/json',
       },
       body: JSON.stringify(body),
+    },
+  };
+}
+
+export function POST_VALIDATE_TOKEN(token) {
+  return {
+    url: API_URL + '/validate',
+    options: {
+      method: 'POST',
+      headers: {
+        'Content-type': 'application/json',
+      },
+      body: JSON.stringify(token),
+    },
+  };
+}
+
+export function GET_USER(token) {
+  return {
+    url: API_URL + '/validate',
+    options: {
+      method: 'GET',
+      headers: {
+        Authorization: token,
+      },
     },
   };
 }

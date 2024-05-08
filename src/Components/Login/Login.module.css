@@ -8,6 +8,11 @@
   box-shadow: 0 0 0 2px #83b2fd, 0 0 0 3px #2556e9;
 }
 
+.outline:disabled {
+  opacity: 0.5;
+  cursor: wait;
+}
+
 .container {
   position: relative;
 }
