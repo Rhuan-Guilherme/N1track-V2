@@ -23,13 +23,13 @@ const Slidebar = () => {
   if (!login) return <></>;
   return (
     <section
-      className={`h-full relative bg-cinza-100 dark:bg-cinza-950 transition-all duration-300 z-10 border-r border-cinza-200 ${
+      className={`h-full relative bg-cinza-100 dark:bg-cinza-950 transition-all duration-300 z-10 border-r border-cinza-200 dark:border-cinza-700 ${
         slide ? 'w-20 md:w-60' : 'w-0'
       } ${styles.section}`}
     >
       <button
         onClick={() => setSlide(!slide)}
-        className="absolute bg-azul-700 w-6 h-14 top-10 -right-[26px] -z-1 rounded-r-md"
+        className="absolute bg-azul-700 dark:border dark:border-azul-500  w-6 h-14 top-8 -right-[26px] -z-1 rounded-r-md"
       >
         <Seta
           className={`${
@@ -40,7 +40,7 @@ const Slidebar = () => {
       <div
         className={`${
           slide ? 'block' : 'hidden'
-        } flex flex-col items-center justify-center md:items-start md:px-2 mt-9`}
+        } flex flex-col items-center justify-center md:items-start md:px-2 mt-7`}
       >
         <div className="w-full mb-1 p-2 rounded-lg flex gap-1">
           <div className="w-12 h-12 rounded-full border border-cinza-600">
