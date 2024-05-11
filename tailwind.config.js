@@ -1,6 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 export default {
   content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
+  darkMode: 'selector',
   theme: {
     colors: {
       cinza: {
@@ -14,7 +15,7 @@ export default {
         700: '#4f4f4f',
         800: '#454545',
         900: '#3d3d3d',
-        950: '#121212',
+        950: '#262626',
       },
       azul: {
         50: '#eff5ff',

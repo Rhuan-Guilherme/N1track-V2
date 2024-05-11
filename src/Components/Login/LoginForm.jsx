@@ -5,11 +5,12 @@ import Input from './Input';
 import Button from './Button';
 import useForm from '../../Hooks/useForm';
 import { UserContext } from '../../Context/UserContext';
+import Error from '../Bedges/Error';
 
 const LoginForm = () => {
   const email = useForm('email');
   const senha = useForm();
-  const { data, error, userLogin, loading } = React.useContext(UserContext);
+  const { error, userLogin, loading } = React.useContext(UserContext);
 
   async function handleSubmit(event) {
     event.preventDefault();
@@ -44,7 +45,7 @@ const LoginForm = () => {
           <Button>Entrar</Button>
         )}
 
-        {error && <p>{error}</p>}
+        {error && <Error>{error}</Error>}
       </form>
     </section>
   );

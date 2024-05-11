@@ -4,11 +4,28 @@ import styles from './Login.module.css';
 import Input from './Input';
 import Button from './Button';
 import useForm from '../../Hooks/useForm';
+import useFetch from '../../Hooks/useFetch';
+import { POST_CADASTRO } from '../../API/api';
+import { UserContext } from '../../Context/UserContext';
+import Error from '../Bedges/Error';
 
 const LoginCadastro = () => {
   const nome = useForm();
   const email = useForm('email');
   const senha = useForm('password');
+  const { data, loading, error, request } = useFetch();
+  const { userLogin } = React.useContext(UserContext);
+
+  async function registerUser(event) {
+    event.preventDefault();
+    const { url, options } = POST_CADASTRO({
+      nome: nome.value,
+      email: email.value,
+      senha: senha.value,
+    });
+    await request(url, options);
+    userLogin(email.value, senha.value);
+  }
 
   return (
     <section className={styles.animeLeft}>
@@ -27,11 +44,16 @@ const LoginCadastro = () => {
           </Link>
         </p>
       </div>
-      <form className="mt-10 w-96">
+      <form onSubmit={registerUser} className="mt-10 w-96">
         <Input label="Nome" type="text" name="nome" {...nome} />
         <Input label="E-mail" type="text" name="email" {...email} />
         <Input label="Senha" type="password" name="senha" {...senha} />
-        <Button>Criar</Button>
+        {loading ? (
+          <Button disabled>Criando...</Button>
+        ) : (
+          <Button>Criar</Button>
+        )}
+        {error && <Error>{error}</Error>}
       </form>
     </section>
   );

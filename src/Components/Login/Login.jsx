@@ -10,7 +10,7 @@ const Login = () => {
 
   if (login) return <Navigate to="/" />;
   return (
-    <div className="grid grid-cols-2 h-screen p-2">
+    <div className="grid grid-cols-2 h-screen w-screen p-2">
       <section className="flex items-center justify-center">
         <Routes>
           <Route path="/" element={<LoginForm />} />

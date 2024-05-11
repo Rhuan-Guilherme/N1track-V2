@@ -38,3 +38,16 @@ export function GET_USER(token) {
     },
   };
 }
+
+export function POST_CADASTRO(body) {
+  return {
+    url: API_URL + '/cadastro',
+    options: {
+      method: 'POST',
+      headers: {
+        'Content-type': 'application/json',
+      },
+      body: JSON.stringify(body),
+    },
+  };
+}
