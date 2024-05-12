@@ -51,3 +51,16 @@ export function POST_CADASTRO(body) {
     },
   };
 }
+
+export function POST_RETURN_USERS(termo) {
+  return {
+    url: API_URL + '/usuarios',
+    options: {
+      method: 'POST',
+      headers: {
+        'Content-type': 'application/json',
+      },
+      body: JSON.stringify(termo),
+    },
+  };
+}
