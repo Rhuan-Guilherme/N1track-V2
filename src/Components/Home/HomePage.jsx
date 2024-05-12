@@ -5,6 +5,9 @@ import { AnimeContext } from '../../Context/AnimeContext';
 import FormOptions from './FormOptions';
 import ChamadoForm from './Forms/ChamadoForm';
 import { TicketContext } from '../../Context/TicketContext';
+import ReiteracaoForm from './Forms/ReiteracaoForm';
+import TrasnferenciaForm from './Forms/TrasnferenciaForm';
+import QuedaForm from './Forms/QuedaForm';
 
 const HomePage = () => {
   const { login } = React.useContext(UserContext);
@@ -21,12 +24,12 @@ const HomePage = () => {
       <section className="mb-10">
         <FormOptions />
       </section>
-      <div className="w-auto md:w-10/12 lg:w-6/12 border border-cinza-200 rounded-md p-5">
+      <div className="w-auto md:w-10/12 lg:w-6/12 border border-cinza-200 rounded-md p-5 dark:bg-cinza-700 dark:border-cinza-600">
         <Routes>
           <Route path="/" element={<ChamadoForm />} />
-          <Route path="reiteracao" element={<h1>reiteracao</h1>} />
-          <Route path="trasnferencia" element={<h1>trasnferencia</h1>} />
-          <Route path="queda" element={<h1>queda</h1>} />
+          <Route path="reiteracao" element={<ReiteracaoForm />} />
+          <Route path="trasnferencia" element={<TrasnferenciaForm />} />
+          <Route path="queda" element={<QuedaForm />} />
         </Routes>
       </div>
       {nome}

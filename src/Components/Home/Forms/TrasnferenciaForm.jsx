@@ -3,14 +3,13 @@ import Input from './Input';
 import { TicketContext } from '../../../Context/TicketContext';
 import Button from './Button';
 
-const ChamadoForm = () => {
+const TrasnferenciaForm = () => {
   const { nome, setNome } = React.useContext(TicketContext);
 
   function handleSubmit(event) {
     event.preventDefault();
-    console.log('enviou chamado');
+    console.log('enviou trasnferência');
   }
-
   return (
     <form onSubmit={handleSubmit} className="flex flex-col gap-4">
       <div className="flex flex-col gap-4 sm:flex-row ">
@@ -21,21 +20,14 @@ const ChamadoForm = () => {
           value={nome}
           onChange={({ target }) => setNome(target.value)}
         />
-        <Input label="Login do usuário" type="text" name="login" />
+        <Input label="Destinatario" type="text" name="destinatarios" />
       </div>
       <div className="flex flex-col gap-4 sm:flex-row">
         <Input label="Ramal" type="text" name="ramal" />
-        <Input label="Patrimônio" type="text" name="patrimonio" />
-      </div>
-      <div>
-        <Input label="Informação" type="text" name="informacao" />
-      </div>
-      <div>
-        <Input label="Local" type="text" name="local" />
       </div>
       <Button>REGISTRAR</Button>
     </form>
   );
 };
 
-export default ChamadoForm;
+export default TrasnferenciaForm;

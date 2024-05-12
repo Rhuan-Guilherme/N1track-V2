@@ -5,7 +5,7 @@ const Input = ({ label, name, type, value, onChange }) => {
     <div className="w-full">
       <label
         htmlFor={name}
-        className="block mb-2 font-Poppins text-sm text-cinza-900"
+        className="block mb-2 font-Poppins text-sm text-cinza-900 dark:text-cinza-200"
       >
         {label}
       </label>
@@ -13,7 +13,7 @@ const Input = ({ label, name, type, value, onChange }) => {
         value={value}
         onChange={onChange}
         type={type}
-        className="bg-cinza-100 border border-cinza-200 rounded-md p-1 w-full"
+        className="bg-cinza-100 border border-cinza-200 rounded-md p-1 w-full focus:outline-none hover:outline-none focus:border-azul-500 hover:border-azul-500 hover:bordera focus:bg-cinza-50 hover:bg-cinza-50 dark:bg-cinza-950 dark:shadow dark:border-cinza-950 dark:text-cinza-200 dark:hover:bg-cinza-950 dark:hover:border-cinza-400 dark:focus:bg-cinza-950 dark:focus:border-azul-600 transition-all lg:p-2"
         id={name}
         name={name}
       />
