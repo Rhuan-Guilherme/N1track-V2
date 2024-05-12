@@ -3,7 +3,7 @@ import Input from './Input';
 import { TicketContext } from '../../../Context/TicketContext';
 import Button from './Button';
 import useUsers from '../../../Hooks/useUsers';
-import useTickets from '../../../Hooks/useTickets';
+import { Tooltip } from 'flowbite-react';
 
 const ChamadoForm = () => {
   const {
@@ -25,9 +25,9 @@ const ChamadoForm = () => {
     setCargo,
     vip,
     setVip,
+    postTickets,
   } = React.useContext(TicketContext);
   const { user, setUser, returnUsers } = useUsers();
-  const { postTickets } = useTickets();
 
   function clickUser(target) {
     const value = target.innerText;
@@ -54,7 +54,6 @@ const ChamadoForm = () => {
       returnUsers(inputValue);
     } else {
       setUser('');
-      setNome('');
       setCargo('');
       setVip(false);
     }
@@ -68,15 +67,17 @@ const ChamadoForm = () => {
   return (
     <form onSubmit={handleSubmit} className="flex flex-col gap-4 relative">
       {vip && (
-        <div className="absolute right-[120px] -top-1 text-sm bg-amarelo-500 dark:bg-amarelo-600 dark:border dark:border-amarelo-400 h-6 py-[1px] px-2 rounded-lg text-cinza-50 font-semibold flex items-center justify-center">
-          <span className="material-symbols-outlined text-sm leading-3">
-            star
-          </span>
+        <div className="absolute right-[120px] z-10 -top-1 text-sm bg-amarelo-500 dark:bg-amarelo-600 dark:border dark:border-amarelo-400 h-6 py-[1px] px-2 rounded-lg text-cinza-50 font-semibold flex items-center justify-center">
+          <Tooltip content={area}>
+            <span className="material-symbols-outlined text-sm leading-3">
+              star
+            </span>
+          </Tooltip>
         </div>
       )}
       {cargo && (
         <div
-          className="absolute right-0 -top-1 text-sm bg-azul-600 dark:border dark:border-azul-400
+          className="absolute z-10 right-0 -top-1 text-sm bg-azul-600 dark:border dark:border-azul-400
         dark:text-azul-50 h-6 w-28 py-[1px] px-3 rounded-lg text-cinza-50 font-semibold flex items-center justify-center"
         >
           {cargo}

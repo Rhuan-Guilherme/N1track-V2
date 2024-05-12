@@ -8,22 +8,25 @@ import { TicketContext } from '../../Context/TicketContext';
 import ReiteracaoForm from './Forms/ReiteracaoForm';
 import TrasnferenciaForm from './Forms/TrasnferenciaForm';
 import QuedaForm from './Forms/QuedaForm';
+import Ticket from './Tickets/Ticket';
 
 const HomePage = () => {
   const { login } = React.useContext(UserContext);
   const { slide } = React.useContext(AnimeContext);
   const { nome } = React.useContext(TicketContext);
+  const { tickets } = React.useContext(TicketContext);
+  console.log(tickets);
 
   if (!login) return <Navigate to="/login" />;
   return (
     <section
-      className={`w-screen bg-cinza-50 dark:bg-cinza-900 flex flex-col items-center pt-8 ${
-        slide ? 'pl-10' : 'pl-0'
+      className={`w-screen bg-cinza-50 dark:bg-cinza-900 flex flex-col items-center pt-8 overflow-y-auto ${
+        slide ? 'px-10' : 'pl-0'
       }`}
     >
-      <section className="mb-10">
+      <div className="mb-10">
         <FormOptions />
-      </section>
+      </div>
       <div className="w-auto md:w-10/12 lg:w-6/12 border border-cinza-200 rounded-md p-5 dark:bg-cinza-700 dark:border-cinza-600">
         <Routes>
           <Route path="/" element={<ChamadoForm />} />
@@ -32,7 +35,9 @@ const HomePage = () => {
           <Route path="queda" element={<QuedaForm />} />
         </Routes>
       </div>
-      {nome}
+      <div className="bg-cinza-100 h-auto w-10/12 mt-5 m-3 flex flex-wrap justify-center items-center p-3 gap-3 ">
+        {tickets && tickets.map((ticket) => <Ticket tiket={ticket} />)}
+      </div>
     </section>
   );
 };

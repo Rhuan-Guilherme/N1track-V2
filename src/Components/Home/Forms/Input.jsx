@@ -5,7 +5,7 @@ const Input = ({ label, name, type, value, onChange }) => {
     <div className="w-full">
       <label
         htmlFor={name}
-        className="block mb-2 font-Poppins text-sm text-cinza-900 dark:text-cinza-200"
+        className="inline-block mb-2 font-Poppins text-sm text-cinza-900 dark:text-cinza-200"
       >
         {label}
       </label>

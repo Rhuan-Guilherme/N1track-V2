@@ -4,16 +4,22 @@ import { TicketContext } from '../../../Context/TicketContext';
 import Button from './Button';
 
 const QuedaForm = () => {
-  const { nome, setNome } = React.useContext(TicketContext);
+  const { ramal, setRamal, postTickets } = React.useContext(TicketContext);
 
   function handleSubmit(event) {
     event.preventDefault();
-    console.log('enviou trasnferência');
+    postTickets('queda');
   }
   return (
     <form onSubmit={handleSubmit} className="flex flex-col gap-4">
       <div className="flex flex-col gap-4 sm:flex-row">
-        <Input label="Ramal da queda" type="text" name="ramal" />
+        <Input
+          label="Ramal da queda"
+          type="text"
+          name="ramal"
+          value={ramal}
+          onChange={({ target }) => setRamal(target.value)}
+        />
       </div>
       <Button>REGISTRAR</Button>
     </form>

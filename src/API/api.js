@@ -77,3 +77,50 @@ export function POST_TIKCET(body) {
     },
   };
 }
+
+export function GET_TIKECTS(id) {
+  return {
+    url: API_URL + `/tickets?id=${id}`,
+    options: {
+      method: 'GET',
+    },
+  };
+}
+
+export function PUT_FECHA_TICKETS(id) {
+  return {
+    url: API_URL + `/options?id=${id}`,
+    options: {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ remove: false }),
+    },
+  };
+}
+
+export function PUT_REABRE_TICKETS(id) {
+  return {
+    url: API_URL + `/options?id=${id}`,
+    options: {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ remove: true }),
+    },
+  };
+}
+
+export function DELETE_TICKETS(id) {
+  return {
+    url: API_URL + `/tickets?id=${id}`,
+    options: {
+      method: 'DELETE',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    },
+  };
+}
