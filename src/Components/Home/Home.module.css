@@ -1,0 +1,7 @@
+@tailwind utilities;
+
+@layer utilities {
+  .nav a:global(.active) {
+    @apply bg-cinza-200 shadow text-cinza-800 font-semibold;
+  }
+}

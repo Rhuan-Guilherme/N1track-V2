@@ -4,19 +4,23 @@ import ButtonSlide from './ButtonSlide';
 import Seta from '../../assets/seta.svg?react';
 import { UserContext } from '../../Context/UserContext';
 import { useNavigate } from 'react-router-dom';
+import { AnimeContext } from '../../Context/AnimeContext';
 
 const Slidebar = () => {
-  const [slide, setSlide] = React.useState(false);
   const [theme, setTheme] = React.useState(false);
   const navigate = useNavigate();
   const { userLogout, login, data } = React.useContext(UserContext);
+  const { slide, setSlide } = React.useContext(AnimeContext);
 
+  let themeLocal = window.localStorage.getItem('theme');
   const toogleThemeMode = () => {
     setTheme(!theme);
     if (theme) {
       document.documentElement.classList.remove('dark');
+      window.localStorage.setItem('theme', 'ligth');
     } else {
       document.documentElement.classList.add('dark');
+      window.localStorage.setItem('theme', 'dark');
     }
   };
 
@@ -72,11 +76,20 @@ const Slidebar = () => {
           <ButtonSlide icon="star" name="Vips" />
           <ButtonSlide icon="share" name="Links" />
           <div className="h-[1px] w-full bg-cinza-400"></div>
-          <ButtonSlide
-            onClick={() => toogleThemeMode()}
-            icon="dark_mode"
-            name="Modo escuro"
-          />
+          {themeLocal === 'ligth' ? (
+            <ButtonSlide
+              onClick={() => toogleThemeMode()}
+              icon="dark_mode"
+              name="Modo escuro"
+            />
+          ) : (
+            <ButtonSlide
+              onClick={() => toogleThemeMode()}
+              icon="light_mode"
+              name="Modo claro"
+            />
+          )}
+
           <ButtonSlide icon="monitoring" name="Desempenho" />
           <ButtonSlide icon="contact_support" name="Suporte" />
           <div className="h-[1px] w-full bg-cinza-400"></div>
