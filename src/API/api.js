@@ -64,3 +64,16 @@ export function POST_RETURN_USERS(termo) {
     },
   };
 }
+
+export function POST_TIKCET(body) {
+  return {
+    url: API_URL + '/tickets',
+    options: {
+      method: 'POST',
+      headers: {
+        'Content-type': 'application/json',
+      },
+      body: JSON.stringify(body),
+    },
+  };
+}

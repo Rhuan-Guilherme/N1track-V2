@@ -15,7 +15,7 @@ const useUsers = () => {
     }
   }
 
-  return { user, returnUsers };
+  return { user, setUser, returnUsers };
 };
 
 export default useUsers;
