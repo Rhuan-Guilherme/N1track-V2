@@ -68,14 +68,17 @@ const ChamadoForm = () => {
   return (
     <form onSubmit={handleSubmit} className="flex flex-col gap-4 relative">
       {vip && (
-        <div className="absolute right-[120px] -top-1 text-sm bg-azul-950 h-6 py-[1px] px-2 rounded-lg text-cinza-50 font-semibold flex items-center justify-center">
+        <div className="absolute right-[120px] -top-1 text-sm bg-amarelo-500 dark:bg-amarelo-600 dark:border dark:border-amarelo-400 h-6 py-[1px] px-2 rounded-lg text-cinza-50 font-semibold flex items-center justify-center">
           <span className="material-symbols-outlined text-sm leading-3">
             star
           </span>
         </div>
       )}
       {cargo && (
-        <div className="absolute right-0 -top-1 text-sm bg-azul-600 h-6 w-28 py-[1px] px-3 rounded-lg text-cinza-50 font-semibold flex items-center justify-center">
+        <div
+          className="absolute right-0 -top-1 text-sm bg-azul-600 dark:border dark:border-azul-400
+        dark:text-azul-50 h-6 w-28 py-[1px] px-3 rounded-lg text-cinza-50 font-semibold flex items-center justify-center"
+        >
           {cargo}
         </div>
       )}
