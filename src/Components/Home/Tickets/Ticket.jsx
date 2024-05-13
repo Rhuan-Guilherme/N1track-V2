@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import Descricao from './Descricao';
 import Detail from './Detail';
 import { TicketContext } from '../../../Context/TicketContext';
+import ModalEdit from '../../Modal/ModalEdit';
 // import ModalEdit from '../Modal/ModalEdit';
 
 const Ticket = ({ tiket }) => {
@@ -97,13 +98,13 @@ const Ticket = ({ tiket }) => {
             >
               Concluir
             </button>
-            {/* {showModal && (
+            {showModal && (
               <ModalEdit
                 ticket={tiket}
                 show={showModal}
                 onClose={handleCloseModal}
               />
-            )} */}
+            )}
           </div>
         </>
       )}

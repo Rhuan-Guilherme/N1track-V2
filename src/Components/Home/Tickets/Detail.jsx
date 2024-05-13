@@ -8,7 +8,7 @@ const Detail = ({ status, tipo, vip }) => {
           className={`border ${
             status === 'Fechado'
               ? 'bg-cinza-300 dark:bg-cinza-800 border-cinza-600 text-cinza-400'
-              : 'bg-[#CECAFF] dark:bg-[#29324C] dark:text-yellow-200 border-yellow-300 text-yellow-400'
+              : 'bg-[#fcec63] dark:bg-[#4a4c29] dark:text-yellow-200 border-yellow-300 text-yellow-600'
           }   rounded-md text-xs  font-roboto font-semibold flex justify-center items-center gap-2 px-1 h-5`}
         >
           <span

@@ -49,10 +49,10 @@ const ModalVips = () => {
         size={modalSize}
         onClose={() => setModalVips(false)}
       >
-        <Modal.Header className="dark:bg-cinzaRoxo-800  dark:border-t dark:border-x dark:border-cinzaRoxo-100">
+        <Modal.Header className="dark:bg-cinza-950  dark:border-t dark:border-x dark:border-cinza-600">
           Lista de VIPS
         </Modal.Header>
-        <Modal.Body className="dark:bg-cinzaRoxo-600 rounded-b-md dark:border-b dark:border-x dark:border-cinzaRoxo-100">
+        <Modal.Body className="dark:bg-cinza-900 rounded-b-md dark:border-b dark:border-x dark:border-cinza-600">
           <div>
             <form onSubmit={handleSubmit} className="flex gap-3">
               <div className=" w-3/6 relative">
@@ -61,10 +61,10 @@ const ModalVips = () => {
                   onChange={onChange}
                   type="text"
                   placeholder="Login"
-                  className="border border-cinza-400 w-full text-base p-3 bg-cinza-100 dark:bg-cinzaRoxo-700 dark:border-cinzaRoxo-100 rounded-lg transition-all focus:outline-none focus:border-roxo-300 focus:shadow-[0_0_0_2px_#B8ACFF] focus:bg-cinza-100 hover:outline-none hover:border-roxo-300 hover:shadow-[0_0_0_2px_#B8ACFF] hover:bg-cinza-100"
+                  className="border border-cinza-400 w-full text-base p-3 bg-cinza-100 dark:bg-cinza-950 dark:text-cinza-100 dark:border-cinza-400 rounded-lg transition-all"
                 />
                 {user && (
-                  <div className="w-full bg-cinza-200 max-h-96 border border-cinza-400 overflow-x-auto z-10 rounded-md mt-1 absolute flex flex-col gap-1 shadow-xl top-[3rem] ">
+                  <div className="w-full bg-cinza-200 dark:bg-cinza-950 dark:text-cinza-100 max-h-96 border border-cinza-400 overflow-x-auto z-10 rounded-md mt-1 absolute flex flex-col gap-1 shadow-xl top-[3rem] ">
                     {user.map((user) => (
                       <div
                         key={user.id}
@@ -77,7 +77,7 @@ const ModalVips = () => {
                   </div>
                 )}
               </div>
-              <button className="bg-azul-700 px-4 text-white font-Roboto font-semibold rounded-lg text-sm">
+              <button className="bg-azul-700 dark:bg-azul-600 px-4 text-white font-Roboto font-semibold rounded-lg text-sm">
                 ADICIONAR
               </button>
             </form>
@@ -85,26 +85,32 @@ const ModalVips = () => {
             <div className="overflow-x-auto mt-10">
               <Table hoverable>
                 <Table.Head>
-                  <Table.HeadCell className="bg-cinza-200">Nome</Table.HeadCell>
-                  <Table.HeadCell className="bg-cinza-200">
+                  <Table.HeadCell className="bg-cinza-200 dark:bg-cinza-950">
+                    Nome
+                  </Table.HeadCell>
+                  <Table.HeadCell className="bg-cinza-200 dark:bg-cinza-950">
                     Login
                   </Table.HeadCell>
-                  <Table.HeadCell className="bg-cinza-200">
+                  <Table.HeadCell className="bg-cinza-200 dark:bg-cinza-950">
                     Area demandante
                   </Table.HeadCell>
-                  <Table.HeadCell className="bg-cinza-200">
+                  <Table.HeadCell className="bg-cinza-200 dark:bg-cinza-950">
                     Excluir
                   </Table.HeadCell>
                 </Table.Head>
                 {vips &&
                   vips.map((item) => (
                     <Table.Body key={item.id} className="divide-y">
-                      <Table.Row className="bg-cinza-100 dark:bg-cinzaRoxo-800 border-b border-cinza-300 dark:border-cinzaRoxo-200">
-                        <Table.Cell className="whitespace-nowrap font-medium text-cinza-900 dark:text-cinza-400">
+                      <Table.Row className="bg-cinza-100 dark:bg-cinza-700  border-b border-cinza-300 dark:border-cinza-500">
+                        <Table.Cell className="whitespace-nowrap font-medium text-cinza-900 dark:text-cinza-100 ">
                           {item.Name}
                         </Table.Cell>
-                        <Table.Cell>{item.login}</Table.Cell>
-                        <Table.Cell>{item.area}</Table.Cell>
+                        <Table.Cell className="dark:text-cinza-200">
+                          {item.login}
+                        </Table.Cell>
+                        <Table.Cell className="dark:text-cinza-200">
+                          {item.area}
+                        </Table.Cell>
                         <Table.Cell>
                           <Tooltip content="Duplo clique">
                             <button

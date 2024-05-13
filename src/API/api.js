@@ -162,7 +162,7 @@ export function DELETE_TICKETS(id) {
 
 export function PUT_TICKETS(body) {
   return {
-    url: API_URL + 'tickets',
+    url: API_URL + '/tickets',
     options: {
       method: 'PUT',
       headers: {
