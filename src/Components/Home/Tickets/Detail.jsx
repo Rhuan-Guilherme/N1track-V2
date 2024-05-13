@@ -7,13 +7,13 @@ const Detail = ({ status, tipo }) => {
         <span
           className={`border ${
             status === 'Fechado'
-              ? 'bg-cinza-300 border-cinza-600 text-cinzaEscuro-700'
-              : 'bg-[#CECAFF] border-azul-600 text-azul-900'
+              ? 'bg-cinza-300 dark:bg-cinza-800 border-cinza-600 text-cinza-400'
+              : 'bg-[#CECAFF] dark:bg-[#29324C] dark:text-azul-200 border-azul-600 text-azul-900'
           }   rounded-md text-xs  font-roboto font-semibold flex justify-center items-center gap-2 px-1 h-5`}
         >
           <span
             className={`w-2 h-2 bg-azul-600 ${
-              status === 'Fechado' ? 'bg-cinzaEscuro-500' : 'bg-azul-600'
+              status === 'Fechado' ? 'bg-cinza-500' : 'bg-azul-600'
             } rounded-full`}
           ></span>
           Chamado
@@ -24,13 +24,13 @@ const Detail = ({ status, tipo }) => {
         <span
           className={` border ${
             status === 'Fechado'
-              ? 'bg-cinza-300 border-cinza-600 text-cinzaEscuro-700'
-              : 'bg-red-200 border-red-600 text-red-900'
+              ? 'bg-cinza-300 dark:bg-cinza-800 border-cinza-600 text-cinza-400'
+              : 'bg-red-200 dark:bg-[#663636] border-red-600 text-red-900 dark:text-red-300'
           }  rounded-md text-xs  font-roboto font-semibold flex justify-center items-center gap-2 px-1 h-5`}
         >
           <span
             className={`w-2 h-2  ${
-              status === 'Fechado' ? 'bg-cinzaEscuro-500' : 'bg-red-600'
+              status === 'Fechado' ? 'bg-cinza-500' : 'bg-red-600'
             } rounded-full`}
           ></span>
           Queda
@@ -40,13 +40,13 @@ const Detail = ({ status, tipo }) => {
         <span
           className={` border ${
             status === 'Fechado'
-              ? 'bg-cinza-300 border-cinza-600 text-cinzaEscuro-700'
-              : 'bg-orange-200 border-orange-600 text-orange-900'
+              ? 'bg-cinza-300 dark:bg-cinza-800 border-cinza-600 text-cinza-400'
+              : 'bg-orange-200 dark:bg-[#5a381fbe] border-orange-600 text-orange-900 dark:text-orange-300'
           }  rounded-md text-xs  font-roboto font-semibold flex justify-center items-center gap-2 px-1 h-5`}
         >
           <span
             className={`w-2 h-2 ${
-              status === 'Fechado' ? 'bg-cinzaEscuro-500' : 'bg-orange-600'
+              status === 'Fechado' ? 'bg-cinza-500' : 'bg-orange-600'
             }   rounded-full`}
           ></span>
           Reiteração
@@ -56,13 +56,13 @@ const Detail = ({ status, tipo }) => {
         <span
           className={` border ${
             status === 'Fechado'
-              ? 'bg-cinza-300 border-cinza-600 text-cinzaEscuro-700'
-              : 'bg-azul-100 border-azul-400 text-azul-900'
+              ? 'bg-cinza-300 dark:bg-cinza-800 border-cinza-600 text-cinza-400'
+              : 'bg-azul-100 dark:bg-[#2f4958] border-azul-400 text-azul-900 dark:text-azul-200'
           }  rounded-md text-xs  font-roboto font-semibold flex justify-center items-center gap-2 px-1 h-5`}
         >
           <span
             className={`w-2 h-2 ${
-              status === 'Fechado' ? 'bg-cinzaEscuro-500' : 'bg-azul-400'
+              status === 'Fechado' ? 'bg-cinza-500' : 'bg-azul-400'
             }  rounded-full`}
           ></span>
           Trasnferência

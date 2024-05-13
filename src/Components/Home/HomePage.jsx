@@ -35,7 +35,7 @@ const HomePage = () => {
           <Route path="queda" element={<QuedaForm />} />
         </Routes>
       </div>
-      <div className="bg-cinza-100 h-auto w-10/12 mt-5 m-3 flex flex-wrap justify-center items-center p-3 gap-3 ">
+      <div className="bg-cinza-100 dark:bg-cinza-700 h-auto w-10/12 mt-5 m-3 flex flex-wrap justify-center items-center px-3 py-5 gap-3 rounded-lg ">
         {tickets && tickets.map((ticket) => <Ticket tiket={ticket} />)}
       </div>
     </section>

@@ -40,6 +40,14 @@ export const TicketStorage = ({ children }) => {
   }, [id]);
 
   async function postTickets(tipo) {
+    const now = new Date();
+    const dia = now.getDate();
+    const mes = now.getMonth() + 1;
+    const ano = now.getFullYear();
+    const hora = now.getHours();
+    const minuto = now.getMinutes();
+    const minutoFormatado = minuto < 10 ? `0${minuto}` : minuto;
+
     try {
       const { url, options } = POST_TIKCET({
         user_id: data.id,
@@ -53,12 +61,26 @@ export const TicketStorage = ({ children }) => {
         chamado: chamado,
         destinatario: destinatario,
         tipo: tipo,
+        created_at: `${dia}/${mes}/${ano} às ${hora}:${minutoFormatado}`,
+        vip: vip ? 'sim' : 'nao',
       });
       const response = await fetch(url, options);
       const json = await response.json();
-      getTikcets();
     } catch (err) {
       console.log(err);
+    } finally {
+      setLogin('');
+      setNome('');
+      setArea('');
+      setCargo('');
+      setRamal('');
+      setPatrimonio('');
+      setInformacao('');
+      setLocal('');
+      setVip('');
+      setDestinatario('');
+      setChamado('');
+      getTikcets();
     }
   }
 

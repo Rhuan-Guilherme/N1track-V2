@@ -10,7 +10,7 @@ const Slidebar = () => {
   const [theme, setTheme] = React.useState(false);
   const navigate = useNavigate();
   const { userLogout, login, data } = React.useContext(UserContext);
-  const { slide, setSlide } = React.useContext(AnimeContext);
+  const { slide, setSlide, setModalVips } = React.useContext(AnimeContext);
 
   let themeLocal = window.localStorage.getItem('theme');
   const toogleThemeMode = () => {
@@ -73,7 +73,11 @@ const Slidebar = () => {
             icon="table_rows"
             name="Organograma"
           />
-          <ButtonSlide icon="star" name="Vips" />
+          <ButtonSlide
+            onClick={() => setModalVips(true)}
+            icon="star"
+            name="Vips"
+          />
           <ButtonSlide icon="share" name="Links" />
           <div className="h-[1px] w-full bg-cinza-400"></div>
           {themeLocal === 'ligth' ? (

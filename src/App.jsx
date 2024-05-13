@@ -7,6 +7,7 @@ import { TicketStorage } from './Context/TicketContext';
 import HomePage from './Components/Home/HomePage';
 import Header from './Components/Layout/Header';
 import Slidebar from './Components/Slidebar/Slidebar';
+import ModalVips from './Components/Modal/ModalVips';
 
 function App() {
   React.useEffect(() => {
@@ -29,6 +30,7 @@ function App() {
           <AnimeStorage>
             <Slidebar />
             <TicketStorage>
+              <ModalVips />
               <Routes>
                 <Route path="/*" element={<HomePage />} />
                 <Route path="/login/*" element={<Login />} />

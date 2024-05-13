@@ -2,7 +2,7 @@ import React from 'react';
 
 const Descricao = ({ tiket }) => {
   return (
-    <div className="flex flex-col gap-2 font-roboto">
+    <div className="flex flex-col gap-2 font-roboto dark:text-white">
       {tiket.tipo === 'chamado' && (
         <>
           <p>

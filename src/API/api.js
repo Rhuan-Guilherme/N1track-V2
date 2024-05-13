@@ -65,6 +65,41 @@ export function POST_RETURN_USERS(termo) {
   };
 }
 
+export function GET_VIPS() {
+  return {
+    url: API_URL + '/vips',
+    options: {
+      method: 'GET',
+    },
+  };
+}
+
+export function ADD_VIPS(login) {
+  return {
+    url: API_URL + '/vips',
+    options: {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(login),
+    },
+  };
+}
+
+export function DELETE_VIPS(id) {
+  return {
+    url: API_URL + '/vips',
+    options: {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(id),
+    },
+  };
+}
+
 export function POST_TIKCET(body) {
   return {
     url: API_URL + '/tickets',
@@ -121,6 +156,19 @@ export function DELETE_TICKETS(id) {
       headers: {
         'Content-Type': 'application/json',
       },
+    },
+  };
+}
+
+export function PUT_TICKETS(body) {
+  return {
+    url: API_URL + 'tickets',
+    options: {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(body),
     },
   };
 }
