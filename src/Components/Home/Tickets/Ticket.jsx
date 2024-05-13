@@ -62,7 +62,7 @@ const Ticket = ({ tiket }) => {
         <p className="font-roboto">
           {tiket.nome.split(' ')[0]} - {tiket.ramal}
         </p>
-        <Detail status={tiket.status} tipo={tiket.tipo} />
+        <Detail status={tiket.status} tipo={tiket.tipo} vip={tiket.vip} />
       </div>
 
       {tiket.area && (

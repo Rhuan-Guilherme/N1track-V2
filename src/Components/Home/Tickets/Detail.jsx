@@ -1,9 +1,25 @@
 import React from 'react';
 
-const Detail = ({ status, tipo }) => {
+const Detail = ({ status, tipo, vip }) => {
   return (
     <>
-      {tipo === 'chamado' && (
+      {vip === 'sim' && (
+        <span
+          className={`border ${
+            status === 'Fechado'
+              ? 'bg-cinza-300 dark:bg-cinza-800 border-cinza-600 text-cinza-400'
+              : 'bg-[#CECAFF] dark:bg-[#29324C] dark:text-yellow-200 border-yellow-300 text-yellow-400'
+          }   rounded-md text-xs  font-roboto font-semibold flex justify-center items-center gap-2 px-1 h-5`}
+        >
+          <span
+            className={`w-2 h-2 bg-yellow-400 ${
+              status === 'Fechado' ? 'bg-cinza-500' : 'bg-yellow-400'
+            } rounded-full`}
+          ></span>
+          VIP
+        </span>
+      )}
+      {tipo === 'chamado' && vip === 'nao' && (
         <span
           className={`border ${
             status === 'Fechado'
