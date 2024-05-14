@@ -15,7 +15,6 @@ const HomePage = () => {
   const { slide } = React.useContext(AnimeContext);
   const { nome } = React.useContext(TicketContext);
   const { tickets } = React.useContext(TicketContext);
-  console.log(tickets);
 
   if (!login) return <Navigate to="/login" />;
   return (

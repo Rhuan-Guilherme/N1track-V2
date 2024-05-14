@@ -18,7 +18,6 @@ const ModalVips = () => {
   } = useUsers();
   const { modalVips, setModalVips } = React.useContext(AnimeContext);
   const [modalSize] = React.useState('5xl');
-  console.log(vips);
 
   const clickUser = (targer) => {
     const value = targer.innerText;

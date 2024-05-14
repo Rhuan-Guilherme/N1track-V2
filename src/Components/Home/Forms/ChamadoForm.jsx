@@ -5,6 +5,7 @@ import Button from './Button';
 import useUsers from '../../../Hooks/useUsers';
 import { Tooltip } from 'flowbite-react';
 import { AnimeContext } from '../../../Context/AnimeContext';
+import useBinds from '../../../Hooks/useBinds';
 
 const ChamadoForm = () => {
   const {
@@ -29,7 +30,8 @@ const ChamadoForm = () => {
     postTickets,
   } = React.useContext(TicketContext);
   const { user, setUser, returnUsers } = useUsers();
-  const { setModalUsers } = React.useContext(AnimeContext);
+  const { termoBind, setTermoBind, returnBindTermo } = useBinds();
+  const { setModalUsers, setModalBind } = React.useContext(AnimeContext);
 
   function clickUser(target) {
     const value = target.innerText;
@@ -58,6 +60,29 @@ const ChamadoForm = () => {
       setUser('');
       setCargo('');
       setVip(false);
+    }
+  }
+
+  function clickInfo(target) {
+    const value = target.innerText;
+
+    const returnBind = termoBind.map((bind) => {
+      console.log(bind.nome === value);
+      if (bind.nome === value) {
+        setInformacao(bind.informacao);
+        setTermoBind('');
+      }
+    });
+    returnBind;
+  }
+
+  function handleInfo({ target }) {
+    const inputValue = target.value;
+    setInformacao(inputValue);
+    if (inputValue.length >= 2) {
+      returnBindTermo(inputValue);
+    } else {
+      setTermoBind('');
     }
   }
 
@@ -141,14 +166,34 @@ const ChamadoForm = () => {
           onChange={({ target }) => setPatrimonio(target.value)}
         />
       </div>
-      <div>
+      <div className="relative">
         <Input
           label="Informação"
           type="text"
           name="informacao"
           value={informacao}
-          onChange={({ target }) => setInformacao(target.value)}
+          onChange={handleInfo}
         />
+        {termoBind && termoBind.length > 0 && (
+          <div className="w-full bg-cinza-100 max-h-96 border border-cinza-300 overflow-x-auto z-10 rounded-md mt-1 absolute flex flex-col gap-1 shadow-xl top-[4.5rem] ">
+            {termoBind.map((bind) => (
+              <div
+                key={bind.id}
+                onClick={({ target }) => clickInfo(target)}
+                className="border-b border-cinza-400 p-2 cursor-pointer flex items-center gap-4 indent-px"
+              >
+                <span className="">{bind.nome}</span>
+              </div>
+            ))}
+          </div>
+        )}
+        <button
+          onClick={() => setModalBind(true)}
+          type="button"
+          className="absolute right-3 top-[40px] text-cinza-300 dark:text-cinza-600"
+        >
+          <span className="material-symbols-outlined">add</span>
+        </button>
       </div>
       <div>
         <Input

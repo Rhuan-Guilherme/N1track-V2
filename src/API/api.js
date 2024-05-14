@@ -185,3 +185,37 @@ export function PUT_TICKETS(body) {
     },
   };
 }
+
+export function GET_BINDS() {
+  return {
+    url: API_URL + '/binds',
+    options: {
+      method: 'GET',
+    },
+  };
+}
+
+export function POST_BINDS(body) {
+  return {
+    url: API_URL + '/binds',
+    options: {
+      method: 'POST',
+      headers: {
+        'Content-type': 'application/json',
+      },
+      body: JSON.stringify(body),
+    },
+  };
+}
+
+export function DELETE_BIND(id) {
+  return {
+    url: API_URL + `/binds?id=${id}`,
+    options: {
+      method: 'DELETE',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    },
+  };
+}
