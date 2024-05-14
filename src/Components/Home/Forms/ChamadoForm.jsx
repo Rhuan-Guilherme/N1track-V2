@@ -4,6 +4,7 @@ import { TicketContext } from '../../../Context/TicketContext';
 import Button from './Button';
 import useUsers from '../../../Hooks/useUsers';
 import { Tooltip } from 'flowbite-react';
+import { AnimeContext } from '../../../Context/AnimeContext';
 
 const ChamadoForm = () => {
   const {
@@ -28,6 +29,7 @@ const ChamadoForm = () => {
     postTickets,
   } = React.useContext(TicketContext);
   const { user, setUser, returnUsers } = useUsers();
+  const { setModalUsers } = React.useContext(AnimeContext);
 
   function clickUser(target) {
     const value = target.innerText;
@@ -92,13 +94,22 @@ const ChamadoForm = () => {
           value={nome}
           onChange={({ target }) => setNome(target.value)}
         />
-        <Input
-          label="Login do usuário"
-          type="text"
-          name="login"
-          value={login}
-          onChange={handleLogin}
-        />
+        <div className="w-full relative">
+          <Input
+            label="Login do usuário"
+            type="text"
+            name="login"
+            value={login}
+            onChange={handleLogin}
+          />
+          <button
+            onClick={() => setModalUsers(true)}
+            type="button"
+            className="absolute right-3 top-[40px] text-cinza-300 dark:text-cinza-600"
+          >
+            <span className="material-symbols-outlined">add</span>
+          </button>
+        </div>
 
         {user && user.length > 0 && (
           <div className="w-full bg-cinza-100 max-h-96 border border-cinza-300 overflow-x-auto z-10 rounded-md mt-1 absolute flex flex-col gap-1 shadow-xl top-[4.5rem] ">

@@ -8,6 +8,7 @@ import HomePage from './Components/Home/HomePage';
 import Header from './Components/Layout/Header';
 import Slidebar from './Components/Slidebar/Slidebar';
 import ModalVips from './Components/Modal/ModalVips';
+import ModalAddUser from './Components/Modal/ModalAddUser';
 
 function App() {
   React.useEffect(() => {
@@ -31,6 +32,7 @@ function App() {
             <Slidebar />
             <TicketStorage>
               <ModalVips />
+              <ModalAddUser />
               <Routes>
                 <Route path="/*" element={<HomePage />} />
                 <Route path="/login/*" element={<Login />} />

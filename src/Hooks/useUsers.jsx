@@ -1,19 +1,45 @@
 import React from 'react';
-import { ADD_VIPS, DELETE_VIPS, GET_VIPS, POST_RETURN_USERS } from '../API/api';
+import {
+  ADD_VIPS,
+  DELETE_VIPS,
+  GET_VIPS,
+  POST_ADD_USERS,
+  POST_RETURN_USERS,
+} from '../API/api';
 
 const useUsers = () => {
   const [user, setUser] = React.useState([]);
   const [vips, setVips] = React.useState([]);
   const [value, setValue] = React.useState(null);
+  const [message, setMessage] = React.useState('');
 
   async function returnUsers(termo) {
-    const { url, options } = POST_RETURN_USERS({ termo: termo });
+    const { url, options } = POST_RETURN_USERS({ add: false, termo: termo });
     try {
       const response = await fetch(url, options);
       const json = await response.json();
       setUser(json);
     } catch (err) {
       console.log(err);
+    }
+  }
+
+  async function addUser(login, name, cargo, area) {
+    const { url, options } = POST_ADD_USERS({
+      add: true,
+      login,
+      name,
+      cargo,
+      area,
+    });
+    try {
+      const response = await fetch(url, options);
+      const json = await response.json();
+      console.log(json.message);
+      setMessage(json.message);
+    } catch (err) {
+      console.log(err);
+      setMessage(err);
     }
   }
 
@@ -63,6 +89,9 @@ const useUsers = () => {
     setValue,
     deleteVip,
     addVips,
+    addUser,
+    message,
+    setMessage,
   };
 };
 

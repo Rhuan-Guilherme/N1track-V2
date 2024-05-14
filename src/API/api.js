@@ -65,6 +65,19 @@ export function POST_RETURN_USERS(termo) {
   };
 }
 
+export function POST_ADD_USERS(body) {
+  return {
+    url: API_URL + '/usuarios',
+    options: {
+      method: 'POST',
+      headers: {
+        'Content-type': 'application/json',
+      },
+      body: JSON.stringify(body),
+    },
+  };
+}
+
 export function GET_VIPS() {
   return {
     url: API_URL + '/vips',
