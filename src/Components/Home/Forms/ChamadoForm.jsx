@@ -67,7 +67,9 @@ const ChamadoForm = () => {
     const value = target.innerText;
 
     const returnBind = termoBind.map((bind) => {
-      console.log(bind.nome === value);
+      console.log(bind.nome);
+      console.log(value);
+      console.log(bind.nome == value);
       if (bind.nome === value) {
         setInformacao(bind.informacao);
         setTermoBind('');
@@ -137,7 +139,7 @@ const ChamadoForm = () => {
         </div>
 
         {user && user.length > 0 && (
-          <div className="w-full bg-cinza-100 max-h-96 border border-cinza-300 overflow-x-auto z-10 rounded-md mt-1 absolute flex flex-col gap-1 shadow-xl top-[4.5rem] ">
+          <div className="w-full bg-cinza-200 dark:bg-cinza-900 dark:text-cinza-100 max-h-96 border border-cinza-300 overflow-x-auto z-10 rounded-md mt-1 absolute flex flex-col gap-1 shadow-xl top-[4.5rem] ">
             {user.map((user) => (
               <div
                 key={user.id}
@@ -175,7 +177,7 @@ const ChamadoForm = () => {
           onChange={handleInfo}
         />
         {termoBind && termoBind.length > 0 && (
-          <div className="w-full bg-cinza-100 max-h-96 border border-cinza-300 overflow-x-auto z-10 rounded-md mt-1 absolute flex flex-col gap-1 shadow-xl top-[4.5rem] ">
+          <div className="w-full bg-cinza-200 dark:bg-cinza-900 dark:text-cinza-100 max-h-96 border border-cinza-300 overflow-x-auto z-10 rounded-md mt-1 absolute flex flex-col gap-1 shadow-xl top-[4.5rem] ">
             {termoBind.map((bind) => (
               <div
                 key={bind.id}

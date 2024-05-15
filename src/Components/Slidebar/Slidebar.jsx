@@ -94,7 +94,11 @@ const Slidebar = () => {
             />
           )}
 
-          <ButtonSlide icon="monitoring" name="Desempenho" />
+          <ButtonSlide
+            icon="monitoring"
+            name="Desempenho"
+            onClick={() => navigate('/desempenho')}
+          />
           <ButtonSlide icon="contact_support" name="Suporte" />
           <div className="h-[1px] w-full bg-cinza-400"></div>
           <ButtonSlide icon="settings" name="Configurações" />

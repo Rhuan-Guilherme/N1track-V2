@@ -10,6 +10,8 @@ import Slidebar from './Components/Slidebar/Slidebar';
 import ModalVips from './Components/Modal/ModalVips';
 import ModalAddUser from './Components/Modal/ModalAddUser';
 import ModalBindInfo from './Components/Modal/ModalBindInfo';
+import Organograma from './Components/Organograma/Organograma';
+import Desempenho from './Components/Desempenho/Desempenho';
 
 function App() {
   React.useEffect(() => {
@@ -37,6 +39,8 @@ function App() {
               <ModalBindInfo />
               <Routes>
                 <Route path="/*" element={<HomePage />} />
+                <Route path="/organograma" element={<Organograma />} />
+                <Route path="/desempenho" element={<Desempenho />} />
                 <Route path="/login/*" element={<Login />} />
               </Routes>
             </TicketStorage>
