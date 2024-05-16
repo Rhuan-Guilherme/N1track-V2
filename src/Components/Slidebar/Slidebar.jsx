@@ -48,7 +48,11 @@ const Slidebar = () => {
       >
         <div className="w-full mb-1 p-2 rounded-lg flex gap-1">
           <div className="w-12 h-12 rounded-full border border-cinza-600">
-            <img src={'/avatar1.png'} alt="" />
+            <img
+              className="w-full rounded-full "
+              src={`/avatar${4}.png`}
+              alt=""
+            />
           </div>
           <div className="hidden md:flex flex-col justify-center">
             <span className="text-sm font-semibold text-cinza-900 dark:text-cinza-200">

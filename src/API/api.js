@@ -219,3 +219,12 @@ export function DELETE_BIND(id) {
     },
   };
 }
+
+export function GET_DATA_GRAPICHS() {
+  return {
+    url: API_URL + '/options',
+    options: {
+      method: 'GET',
+    },
+  };
+}
