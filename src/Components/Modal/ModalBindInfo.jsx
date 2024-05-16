@@ -1,5 +1,5 @@
 import React from 'react';
-import { Modal, Table, Tooltip } from 'flowbite-react';
+import { Button, Modal, Table, Tooltip } from 'flowbite-react';
 import { AnimeContext } from '../../Context/AnimeContext';
 import useBinds from '../../Hooks/useBinds';
 
@@ -30,18 +30,28 @@ const ModalBindInfo = () => {
         <Modal.Body className="dark:bg-cinza-900 rounded-b-md dark:border-b dark:border-x dark:border-cinza-600">
           <div>
             <form onSubmit={handleSubmit} className="flex gap-3">
-              <div className=" w-3/6 relative flex gap-3">
-                <div>
-                  <label htmlFor="">Nome da bind</label>
+              <div className=" relative flex gap-3 w-full">
+                <div className="flex flex-col gap-1">
+                  <label
+                    htmlFor=""
+                    className="text-cinza-800 dark:text-cinza-200 font-Poppins text-sm "
+                  >
+                    Nome da bind
+                  </label>
                   <input
                     value={nome}
                     onChange={({ target }) => setNome(target.value)}
                     type="text"
-                    className="border border-cinza-400 w-full text-base p-3 bg-cinza-100 dark:bg-cinza-950 dark:text-cinza-100 dark:border-cinza-400 rounded-lg transition-all"
+                    className="border border-cinza-400  text-base p-3 bg-cinza-100 dark:bg-cinza-950 dark:text-cinza-100 dark:border-cinza-400 rounded-lg transition-all"
                   />
                 </div>
-                <div>
-                  <label htmlFor="">informacao</label>
+                <div className="flex flex-col gap-1 w-full">
+                  <label
+                    htmlFor=""
+                    className="text-cinza-800 dark:text-cinza-200 font-Poppins text-sm "
+                  >
+                    informacao
+                  </label>
                   <input
                     value={info}
                     onChange={({ target }) => setInfo(target.value)}
@@ -50,9 +60,11 @@ const ModalBindInfo = () => {
                   />
                 </div>
               </div>
-              <button className="bg-azul-700 dark:bg-azul-600 px-4 text-white font-Roboto font-semibold rounded-lg text-sm">
-                ADICIONAR
-              </button>
+              <div className="flex justify-start items-end">
+                <button className="bg-azul-700 dark:bg-azul-600 px-4 h-[50px] text-white font-Roboto font-semibold rounded-lg text-sm">
+                  ADICIONAR
+                </button>
+              </div>
             </form>
 
             <div className="overflow-x-auto mt-10">

@@ -79,22 +79,31 @@ const Ticket = ({ tiket }) => {
         <>
           <span className="h-[1px] bg-cinza-300 dark:bg-cinza-500"></span>
 
-          <div className="bg-cinza-200 dark:bg-cinza-800 h-12 rounded-lg flex justify-center items-center gap-2 shadow">
+          <div className=" h-12 rounded-lg flex justify-center items-center gap-2 ">
             <button
               onClick={handleEditClick}
-              className="bg-white dark:bg-cinza-950 py-1 px-3 rounded-lg font-poppins font-semibold text-cinza-900 dark:text-cinza-50 shadow"
+              className="cursor-pointer font-semibold transition-all duration-100 bg-cinza-100 text-cinza-800 dark:bg-cinza-900 dark:text-cinza-100 px-4 py-2 rounded-lg
+              border-cinza-200 dark:border-cinza-700
+              border-b-[4px]  hover:-translate-y-[1px] hover:border-b-[6px]
+              active:border-b-[2px] active:brightness-90 active:translate-y-[2px]"
             >
               Editar
             </button>
             <button
               onClick={() => clipboard(tiket, tiket.tipo)}
-              className="bg-white dark:bg-cinza-950 py-1 px-3 rounded-lg font-poppins font-semibold text-cinza-900 dark:text-cinza-50 shadow"
+              className="cursor-pointer font-semibold transition-all duration-100 bg-cinza-100 text-cinza-800 dark:bg-cinza-900 dark:text-cinza-100 px-4 py-2 rounded-lg
+              border-cinza-200 dark:border-cinza-700
+              border-b-[4px]  hover:-translate-y-[1px] hover:border-b-[6px]
+              active:border-b-[2px] active:brightness-90 active:translate-y-[2px]"
             >
               Copiar
             </button>
             <button
               onClick={() => fechaTicket(tiket.id)}
-              className="bg-white dark:bg-cinza-950 py-1 px-3 rounded-lg font-poppins font-semibold text-cinza-900 dark:text-cinza-50 shadow"
+              className="cursor-pointer font-semibold transition-all duration-100 bg-cinza-100 text-cinza-800 dark:bg-cinza-900 dark:text-cinza-100 px-4 py-2 rounded-lg
+              border-cinza-200 dark:border-cinza-700
+              border-b-[4px]  hover:-translate-y-[1px] hover:border-b-[6px]
+              active:border-b-[2px] active:brightness-90 active:translate-y-[2px]"
             >
               Concluir
             </button>
