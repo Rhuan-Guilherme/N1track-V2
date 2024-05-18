@@ -26,7 +26,7 @@ const HomePage = () => {
       <div className="mb-10">
         <FormOptions />
       </div>
-      <div className="w-auto md:w-10/12 lg:w-6/12 border border-cinza-200 rounded-md p-5 dark:bg-cinza-700 dark:border-cinza-600">
+      <div className="w-auto md:w-10/12 xl:w-6/12 border border-cinza-200 rounded-md p-5 dark:bg-cinza-700 dark:border-cinza-600">
         <Routes>
           <Route path="/" element={<ChamadoForm />} />
           <Route path="reiteracao" element={<ReiteracaoForm />} />

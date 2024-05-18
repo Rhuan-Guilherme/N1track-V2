@@ -9,7 +9,7 @@ const FormOptions = () => {
     >
       <NavLink
         to="/"
-        className="flex items-center justify-center gap-2 p-2 rounded-md border border-cinza-300 dark:border-cinza-500 dark:bg-cinza-900 hover:bg-cinza-200 hover:shadow hover:text-cinza-800 transition-all"
+        className="flex items-center justify-center gap-2 p-2 rounded-md border border-cinza-300 dark:border-cinza-500 dark:bg-cinza-950 hover:bg-cinza-200 hover:shadow hover:text-cinza-800 transition-all"
       >
         <span className="material-symbols-outlined ">description</span>
         <span className="hidden md:inline">Chamado</span>
@@ -17,7 +17,7 @@ const FormOptions = () => {
 
       <NavLink
         to="/reiteracao"
-        className="flex items-center justify-center gap-2 p-2 rounded-md border border-cinza-300 dark:border-cinza-500 dark:bg-cinza-900 hover:bg-cinza-200 hover:shadow hover:text-cinza-800 transition-all"
+        className="flex items-center justify-center gap-2 p-2 rounded-md border border-cinza-300 dark:border-cinza-500 dark:bg-cinza-950 hover:bg-cinza-200 hover:shadow hover:text-cinza-800 transition-all"
       >
         <span className="material-symbols-outlined ">
           notification_important
@@ -27,7 +27,7 @@ const FormOptions = () => {
 
       <NavLink
         to="/trasnferencia"
-        className="flex items-center justify-center gap-2 p-2 rounded-md border border-cinza-300 dark:border-cinza-500 dark:bg-cinza-900 hover:bg-cinza-200 hover:shadow hover:text-cinza-800 transition-all"
+        className="flex items-center justify-center gap-2 p-2 rounded-md border border-cinza-300 dark:border-cinza-500 dark:bg-cinza-950 hover:bg-cinza-200 hover:shadow hover:text-cinza-800 transition-all"
       >
         <span className="material-symbols-outlined ">phone_forwarded</span>
         <span className="hidden md:inline">Trasnferência</span>
@@ -35,7 +35,7 @@ const FormOptions = () => {
 
       <NavLink
         to="/queda"
-        className="flex items-center justify-center gap-2 p-2 rounded-md border border-cinza-300 dark:border-cinza-500 dark:bg-cinza-900 hover:bg-cinza-200 hover:shadow hover:text-cinza-800 transition-all"
+        className="flex items-center justify-center gap-2 p-2 rounded-md border border-cinza-300 dark:border-cinza-500 dark:bg-cinza-950 hover:bg-cinza-200 hover:shadow hover:text-cinza-800 transition-all"
       >
         <span className="material-symbols-outlined ">phone_missed</span>
         <span className="hidden md:inline">Queda</span>

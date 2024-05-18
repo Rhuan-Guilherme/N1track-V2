@@ -1,5 +1,5 @@
-const API_URL = 'http://localhost/API';
-// const API_URL = 'https://roadtrack.com.br/API'
+// const API_URL = 'http://localhost/API';
+const API_URL = 'https://roadtrack.com.br/API';
 
 export function POST_TOKEN(body) {
   return {
