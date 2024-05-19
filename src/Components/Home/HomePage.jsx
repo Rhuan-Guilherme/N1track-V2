@@ -13,7 +13,6 @@ import Ticket from './Tickets/Ticket';
 const HomePage = () => {
   const { login } = React.useContext(UserContext);
   const { slide } = React.useContext(AnimeContext);
-  const { nome } = React.useContext(TicketContext);
   const { tickets } = React.useContext(TicketContext);
 
   if (!login) return <Navigate to="/login" />;

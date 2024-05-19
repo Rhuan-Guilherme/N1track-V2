@@ -1,5 +1,5 @@
-// const API_URL = 'http://localhost/API';
-const API_URL = 'https://roadtrack.com.br/API';
+const API_URL = 'http://localhost/API';
+// const API_URL = 'https://roadtrack.com.br/API';
 
 export function POST_TOKEN(body) {
   return {
@@ -126,9 +126,9 @@ export function POST_TIKCET(body) {
   };
 }
 
-export function GET_TIKECTS(id) {
+export function GET_TIKECTS(id, limit, status) {
   return {
-    url: API_URL + `/tickets?id=${id}`,
+    url: API_URL + `/tickets?id=${id}&limit=${limit}&status=${status}`,
     options: {
       method: 'GET',
     },

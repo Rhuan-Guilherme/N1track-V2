@@ -12,6 +12,7 @@ import ModalAddUser from './Components/Modal/ModalAddUser';
 import ModalBindInfo from './Components/Modal/ModalBindInfo';
 import Organograma from './Components/Organograma/Organograma';
 import Desempenho from './Components/Desempenho/Desempenho';
+import ListaChamados from './Components/Lista/ListaChamados';
 
 function App() {
   React.useEffect(() => {
@@ -41,6 +42,7 @@ function App() {
                 <Route path="/*" element={<HomePage />} />
                 <Route path="/organograma" element={<Organograma />} />
                 <Route path="/desempenho" element={<Desempenho />} />
+                <Route path="/lista" element={<ListaChamados />} />
                 <Route path="/login/*" element={<Login />} />
               </Routes>
             </TicketStorage>

@@ -28,16 +28,20 @@ export const TicketStorage = ({ children }) => {
   const [destinatario, setDestinatario] = React.useState('');
   const [vip, setVip] = React.useState(null);
 
-  const getTikcets = React.useCallback(async () => {
-    try {
-      const { url, options } = GET_TIKECTS(id);
-      const response = await fetch(url, options);
-      const json = await response.json();
-      setTickets(json);
-    } catch (err) {
-      console.log(err);
-    }
-  }, [id]);
+  const getTikcets = React.useCallback(
+    async (limit = 50, status = 'all') => {
+      console.log(status);
+      try {
+        const { url, options } = GET_TIKECTS(id, limit, status);
+        const response = await fetch(url, options);
+        const json = await response.json();
+        setTickets(json);
+      } catch (err) {
+        console.log(err);
+      }
+    },
+    [id],
+  );
 
   async function postTickets(tipo) {
     const now = new Date();
