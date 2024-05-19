@@ -30,7 +30,6 @@ export const TicketStorage = ({ children }) => {
 
   const getTikcets = React.useCallback(
     async (limit = 50, status = 'all') => {
-      console.log(status);
       try {
         const { url, options } = GET_TIKECTS(id, limit, status);
         const response = await fetch(url, options);
