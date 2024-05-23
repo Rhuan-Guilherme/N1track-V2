@@ -4,8 +4,10 @@ import Logo from '../../assets/Logo.svg?react';
 import styles from './layout.module.css';
 import { NavLink } from 'react-router-dom';
 
+
 const Header = () => {
-  const { login } = React.useContext(UserContext);
+  const { login, data } = React.useContext(UserContext);
+  
 
   if (!login) return <></>;
   return (
@@ -25,6 +27,23 @@ const Header = () => {
           <NavLink to="/lista">Lista</NavLink>
         </li>
       </ul>
+      <div className="sm:flex items-center gap-8 justify-self-end font-Roboto font-medium hidden">
+          <div className="w-12 h-12 rounded-full border border-cinza-600">
+            <img
+              className="w-full rounded-full "
+              src={`/avatar${4}.png`}
+              alt=""
+            />
+          </div>
+          <div className="hidden lg:flex flex-col justify-center">
+            <span className="text-sm font-semibold text-cinza-900 dark:text-cinza-200">
+              {data.nome}
+            </span>
+            <span className="text-xs text-cinza-600 dark:text-cinza-300 ">
+              {data.email}
+            </span>
+          </div>
+        </div>
     </header>
   );
 };

@@ -59,7 +59,7 @@ const Slidebar = () => {
             <span className="text-sm font-semibold text-cinza-900 dark:text-cinza-200">
               {data.nome}
             </span>
-            <span className="text-xs text-cinza-600 dark:text-cinza-300">
+            <span className="text-xs text-cinza-600 dark:text-cinza-300 truncate hover:text-clip max-w-32">
               {data.email}
             </span>
           </div>
@@ -108,9 +108,9 @@ const Slidebar = () => {
             name="Desempenho"
             onClick={() => navigate('/desempenho')}
           />
-          <ButtonSlide icon="contact_support" name="Suporte" />
+          {/* <ButtonSlide icon="contact_support" name="Suporte" /> */}
           <div className="h-[1px] w-full bg-cinza-400"></div>
-          <ButtonSlide icon="settings" name="Configurações" />
+          {/* <ButtonSlide icon="settings" name="Configurações" /> */}
           <ButtonSlide onClick={() => userLogout()} icon="logout" name="Sair" />
         </div>
       </div>

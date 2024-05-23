@@ -30,7 +30,7 @@ const FormOptions = () => {
         className="flex items-center justify-center gap-2 p-2 rounded-md border border-cinza-300 dark:border-cinza-500 dark:bg-cinza-950 hover:bg-cinza-200 hover:shadow hover:text-cinza-800 dark:hover:bg-cinza-900 dark:hover:text-cinza-200 transition-all"
       >
         <span className="material-symbols-outlined ">phone_forwarded</span>
-        <span className="hidden md:inline">Trasnferência</span>
+        <span className="hidden md:inline">Transferência</span>
       </NavLink>
 
       <NavLink

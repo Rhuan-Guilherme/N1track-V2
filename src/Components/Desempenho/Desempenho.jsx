@@ -24,11 +24,11 @@ const Desempenho = () => {
 
   return (
     <section
-      className={`w-screen bg-cinza-50 dark:bg-cinza-900  pt-[3.5rem] overflow-y-auto ${
+      className={`w-screen bg-cinza-50 dark:bg-cinza-900  pt-[3.5rem] overflow-y-auto py-3 ${
         slide ? 'px-20' : 'px-10'
       }`}
     >
-      <h1 className="text-2xl font-Roboto mb-2 border-b inline-block ">
+      <h1 className="text-2xl dark:text-cinza-100 dark:border-cinza-600 font-Roboto mb-2 border-b inline-block ">
         Grafico de abertura de chamados
       </h1>
       {data && (
