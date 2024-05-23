@@ -127,7 +127,7 @@ export const TicketStorage = ({ children }) => {
       case 'chamado':
         cardText = `Prezados, o Sr(a). ${
           ticket.nome.split(' ')[0]
-        } entrou em contato ${ticket.informacao}.\n\nNome: ${
+        } entrou em contato ${ticket.informacao} \n\nNome: ${
           ticket.nome
         }\nLogin: ${ticket.login}\nRamal: ${ticket.ramal}\nLocal: ${
           ticket.local
@@ -141,7 +141,7 @@ export const TicketStorage = ({ children }) => {
         cardText = `Senhor(a) ${ticket.nome} entrou em contato solicitando transferência de ligação para o(a) senhor(a) ${ticket.destinatario}.\n\nRamal: ${ticket.ramal}`;
         break;
       case 'reiteracao':
-        cardText = `Senhor(a) ${ticket.nome} entrou em contato requisitando a reiteração e brevidade no chamado SERVICEDESK-${ticket.chamado}\n\nLogin: ${ticket.login}\nRamal: ${ticket.ramal}`;
+        cardText = `Senhor(a) ${ticket.nome} entrou em contato requisitando a reiteração e brevidade no chamado SERVICEDESK-${ticket.chamado}.\n\nLogin: ${ticket.login}\nRamal: ${ticket.ramal}`;
         break;
       default:
         console.error('Tipo de cartão desconhecido:', tipo);

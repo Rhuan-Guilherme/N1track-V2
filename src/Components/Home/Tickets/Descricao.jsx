@@ -41,7 +41,12 @@ const Descricao = ({ tiket }) => {
           <p>
             Senhor(a) {tiket.nome} entrou em contato requisitando a reiteração e
             brevidade no chamado{' '}
-            <a href={`https://jira.stf.jus.br/browse/${tiket.chamado}`}>
+            <a
+              target="_blank"
+              className=" font-semibold hover:underline"
+              href={`https://jira.stf.jus.br/browse/SERVICEDESK-${tiket.chamado}`}
+              rel="noreferrer"
+            >
               SERVICEDESK-{tiket.chamado}
             </a>
             .
