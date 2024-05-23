@@ -45,7 +45,17 @@ const LoginForm = () => {
           <Button>Entrar</Button>
         )}
 
-        {error && <Error>{error}</Error>}
+        {error && (
+          <div className="flex items-center gap-1">
+            <Error>{error}</Error>
+            <a
+              href="https://roadtrack.com.br/API/senha/recuperacao.html"
+              className="text-sm font-Roboto text-cinza-700 mt-2 underline"
+            >
+              Esqueceu sua senha?{' '}
+            </a>
+          </div>
+        )}
       </form>
     </section>
   );
