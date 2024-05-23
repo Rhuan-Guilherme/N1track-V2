@@ -63,6 +63,7 @@ export const TicketStorage = ({ children }) => {
         local: local,
         chamado: chamado,
         destinatario: destinatario,
+        area: area,
         tipo: tipo,
         created_at: `${dia}/${mes}/${ano} às ${hora}:${minutoFormatado}`,
         vip: vip ? 'sim' : 'nao',

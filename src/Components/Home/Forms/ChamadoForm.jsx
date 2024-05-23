@@ -38,6 +38,7 @@ const ChamadoForm = () => {
     setLogin(value);
     const returnName = user.map((user) => {
       if (user.login === value) {
+        console.log(user.area);
         setNome(user.name);
         setArea(user.area);
         setCargo(user.cargo);
@@ -67,9 +68,7 @@ const ChamadoForm = () => {
     const value = target.innerText;
 
     const returnBind = termoBind.map((bind) => {
-      console.log(bind.nome);
-      console.log(value);
-      console.log(bind.nome == value);
+
       if (bind.nome === value) {
         setInformacao(bind.informacao);
         setTermoBind('');
