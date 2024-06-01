@@ -68,7 +68,6 @@ const ChamadoForm = () => {
     const value = target.innerText;
 
     const returnBind = termoBind.map((bind) => {
-
       if (bind.nome === value) {
         setInformacao(bind.informacao);
         setTermoBind('');
@@ -196,7 +195,7 @@ const ChamadoForm = () => {
           <span className="material-symbols-outlined">add</span>
         </button>
       </div>
-      <div>
+      <div className="flex flex-col gap-4 sm:flex-row">
         <Input
           label="Local"
           type="text"
@@ -204,6 +203,48 @@ const ChamadoForm = () => {
           value={local}
           onChange={({ target }) => setLocal(target.value)}
         />
+        <div className="w-full">
+          <label className="inline-block mb-2 font-Poppins text-sm text-cinza-900 dark:text-cinza-200">
+            Local pré definido
+          </label>
+          <select
+            value={local}
+            onChange={({ target }) => setLocal(target.value)}
+            className="bg-cinza-100 border border-cinza-200 rounded-md w-full focus:outline-none hover:outline-none focus:border-azul-500 hover:border-azul-500 hover:bordera focus:bg-cinza-50 hover:bg-cinza-50 dark:bg-cinza-950 dark:shadow dark:border-cinza-950 dark:text-cinza-200 dark:hover:bg-cinza-950 dark:hover:border-cinza-400 dark:focus:bg-cinza-950 dark:focus:border-azul-600 transition-all p-2 pr-10"
+          >
+            <option></option>
+            <option value="Anexo 2A / 6° andar / Gabinete Ministra Cármen Lúcia">
+              Gabinete Min. Cármem Lúcia
+            </option>
+            <option value="Anexo 2A / 6° andar / Gabinete Ministro Gilmar Mendes">
+              Gabinete Min. Gilmar Mendes
+            </option>
+            <option value="Anexo 2A / 5° andar / Gabinete Ministro André Mendonça">
+              Gabinete Min. André Mendonça
+            </option>
+            <option value="Anexo 2A / 4° andar / Gabinete Ministro Dias Toffoli">
+              Gabinete Min. Dias Toffoli
+            </option>
+            <option value="Anexo 2A / 5° andar / Gabinete Ministro Nunes Marques">
+              Gabinete Min. Nunes Marques
+            </option>
+            <option value="Anexo 2A / 4° andar / Gabinete Ministro Cristiano Zanin">
+              Gabinete Min. Cristiano Zanin
+            </option>
+            <option value="Anexo 2A / 3° andar / Gabinete Ministro Luiz Fux">
+              Gabinete Min. Luiz Fux
+            </option>
+            <option value="Anexo 2A / 5° andar / Gabinete Ministro Flávio Dino">
+              Gabinete Min. Flávio Dino
+            </option>
+            <option value="Anexo 2A / 3° andar / Gabinete Ministro Edson Fachin">
+              Gabinete Min. Edson Fachin
+            </option>
+            <option value="Anexo 2A / 3° andar / Gabinete Ministro Alexandre de Moraes">
+              Gabinete Min. Alexandre de Moraes
+            </option>
+          </select>
+        </div>
       </div>
       <Button>REGISTRAR</Button>
     </form>
