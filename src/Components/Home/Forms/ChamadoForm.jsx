@@ -91,6 +91,43 @@ const ChamadoForm = () => {
     postTickets('chamado');
   }
 
+  async function generateTextWithIa() {
+    const apiKey = 'teste';
+    const url = 'https://api.openai.com/v1/chat/completions';
+    try {
+      const response = await fetch(url, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Authorization: `Bearer ${apiKey}`,
+        },
+        body: JSON.stringify({
+          model: 'gpt-3.5-turbo',
+          messages: [
+            {
+              role: 'system',
+              content:
+                'Você é um assistente que melhora textos e deixa o mais formal possivel.',
+            },
+            {
+              role: 'user',
+              content: `Melhore bem o seguinte texto: "${informacao}".`,
+            },
+          ],
+          max_tokens: 50,
+        }),
+      });
+      const data = await response.json();
+      if (response.ok) {
+        setInformacao(data.choices[0].message.content);
+      } else {
+        console.log('erro ao corrigir com o chatgpt');
+      }
+    } catch (err) {
+      console.log(err);
+    }
+  }
+
   return (
     <form onSubmit={handleSubmit} className="flex flex-col gap-4 relative">
       {vip && (
@@ -166,7 +203,7 @@ const ChamadoForm = () => {
           onChange={({ target }) => setPatrimonio(target.value)}
         />
       </div>
-      <div className="relative">
+      <div className="relative flex gap-2">
         <Input
           label="Informação"
           type="text"
@@ -190,11 +227,23 @@ const ChamadoForm = () => {
         <button
           onClick={() => setModalBind(true)}
           type="button"
-          className="absolute right-3 top-[40px] text-cinza-300 dark:text-cinza-600"
+          className="absolute right-[4rem] top-[40px] text-cinza-300 dark:text-cinza-600"
         >
           <span className="material-symbols-outlined">add</span>
         </button>
+        <div className="flex items-end">
+          <Tooltip content="Clique duplo">
+            <button
+              onDoubleClick={generateTextWithIa}
+              type="button"
+              className=" text-cinza-100 dark:text-cinza-100 rounded-md bg-azul-700 bg-gradient-to-b from-azul-500 flex p-[9px]"
+            >
+              <span className="material-symbols-outlined">psychology</span>
+            </button>
+          </Tooltip>
+        </div>
       </div>
+
       <div className="flex flex-col gap-4 sm:flex-row">
         <Input
           label="Local"
