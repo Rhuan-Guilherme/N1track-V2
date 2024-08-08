@@ -13,6 +13,7 @@ import ModalBindInfo from './Components/Modal/ModalBindInfo';
 import Organograma from './Components/Organograma/Organograma';
 import Desempenho from './Components/Desempenho/Desempenho';
 import ListaChamados from './Components/Lista/ListaChamados';
+import { ChartModal } from './Components/Modal/ChartModal';
 
 function App() {
   React.useEffect(() => {
@@ -32,13 +33,16 @@ function App() {
       <UserStorage>
         <Header />
         <section className="containerSection">
+        
           <AnimeStorage>
             <Slidebar />
             <TicketStorage>
               <ModalVips />
               <ModalAddUser />
               <ModalBindInfo />
+              <ChartModal />
               <Routes>
+              
                 <Route path="/*" element={<HomePage />} />
                 <Route path="/organograma" element={<Organograma />} />
                 <Route path="/desempenho" element={<Desempenho />} />
