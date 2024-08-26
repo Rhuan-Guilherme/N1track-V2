@@ -7,6 +7,7 @@ export const AnimeStorage = ({ children }) => {
   const [modalVips, setModalVips] = React.useState(false);
   const [modalUsers, setModalUsers] = React.useState(false);
   const [modalBind, setModalBind] = React.useState(false);
+  const [chart, setChart] = React.useState(true);
   return (
     <AnimeContext.Provider
       value={{
@@ -18,6 +19,8 @@ export const AnimeStorage = ({ children }) => {
         setModalUsers,
         modalBind,
         setModalBind,
+        chart, 
+        setChart
       }}
     >
       {children}
