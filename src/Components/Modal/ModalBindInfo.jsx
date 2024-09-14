@@ -9,6 +9,7 @@ const ModalBindInfo = () => {
   const { bind, deleteBind, addBind, returnBindTermo, termoBind } = useBinds();
   const [nome, setNome] = React.useState('');
   const [info, setInfo] = React.useState('');
+  
 
   function handleSubmit(event) {
     event.preventDefault();

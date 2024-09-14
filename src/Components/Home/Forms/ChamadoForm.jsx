@@ -294,6 +294,7 @@ const ChamadoForm = () => {
         </div>
       </div>
       <Button>REGISTRAR</Button>
+    
     </form>
   );
 };
