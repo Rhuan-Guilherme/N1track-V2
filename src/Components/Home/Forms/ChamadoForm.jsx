@@ -107,14 +107,14 @@ const ChamadoForm = () => {
             {
               role: 'system',
               content:
-                'Você é um assistente que melhora textos e deixa o mais formal possivel.',
+                'Você é um assistente que melhora textos e os deixa mais formais. Todas as frases devem começar com gerúndios como "informando", "solicitando" e assim por diante, e devem parecer como se estivessem sendo passadas de uma pessoa para outra equipe, informando algo. Não altere o sentido da frase, apenas a torne mais formal e ajuste a gramática. As frases devem começar com letra minúscula.',
             },
             {
               role: 'user',
-              content: `Melhore bem o seguinte texto: "${informacao}".`,
+              content: `Melhore bem o seguinte texto: "${informacao}". OBS: sempre com letra minuscula no começo da frase, e não mude o sentido da frase, apenas deixe mais formal e ajuste a gramtica.`,
             },
           ],
-          max_tokens: 50,
+          max_tokens: 100,
         }),
       });
       const data = await response.json();
@@ -232,15 +232,13 @@ const ChamadoForm = () => {
           <span className="material-symbols-outlined">add</span>
         </button>
         <div className="flex items-end">
-          <Tooltip content="Clique duplo">
             <button
-              onDoubleClick={generateTextWithIa}
+              onClick={generateTextWithIa}
               type="button"
               className=" text-cinza-100 dark:text-cinza-100 rounded-md bg-azul-700 bg-gradient-to-b from-azul-500 flex p-[9px]"
             >
               <span className="material-symbols-outlined">psychology</span>
             </button>
-          </Tooltip>
         </div>
       </div>
 
