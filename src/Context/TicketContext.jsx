@@ -125,13 +125,13 @@ export const TicketStorage = ({ children }) => {
     let cardText = '';
     switch (tipo) {
       case 'chamado':
-        cardText = `Prezados, o Sr(a). ${
+        cardText = `Prezados, Sr(a). ${
           ticket.nome.split(' ')[0]
         } entrou em contato ${ticket.informacao} \n\nNome: ${
           ticket.nome
-        }\nLogin: ${ticket.login}\nRamal: ${ticket.ramal}\nLocal: ${
-          ticket.local
-        }\nPatrimônio: ${ticket.patrimonio}\n
+        }\nLogin: ${ticket.login}\nRamal: ${ticket.ramal}${ticket.local ? '\nLocal:' + 
+          ticket.local : ''
+        }${ticket.patrimonio ? '\nPatrimônio:' + ticket.patrimonio : ''}\n
         `;
         break;
       case 'queda':

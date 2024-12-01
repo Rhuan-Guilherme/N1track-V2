@@ -93,7 +93,7 @@ const ChamadoForm = () => {
 
   async function generateTextWithIa() {
     const apiKey = 'teste';
-    const url = 'https://api.openai.com/v1/chat/completions';
+    const url = 'teste';
     try {
       const response = await fetch(url, {
         method: 'POST',
@@ -173,6 +173,8 @@ const ChamadoForm = () => {
           </button>
         </div>
 
+        
+
         {user && user.length > 0 && (
           <div className="w-full bg-cinza-200 dark:bg-cinza-900 dark:text-cinza-100 max-h-96 border border-cinza-300 overflow-x-auto z-10 rounded-md mt-1 absolute flex flex-col gap-1 shadow-xl top-[4.5rem] ">
             {user.map((user) => (
@@ -211,7 +213,8 @@ const ChamadoForm = () => {
           value={informacao}
           onChange={handleInfo}
         />
-        {termoBind && termoBind.length > 0 && (
+        {/* Funcionalidade para buscar informações por palavras chave, so desabilitar que volta a funcionar */}
+        {/* {termoBind && termoBind.length > 0 && (
           <div className="w-full bg-cinza-200 dark:bg-cinza-900 dark:text-cinza-100 max-h-96 border border-cinza-300 overflow-x-auto z-10 rounded-md mt-1 absolute flex flex-col gap-1 shadow-xl top-[4.5rem] ">
             {termoBind.map((bind) => (
               <div
@@ -223,14 +226,18 @@ const ChamadoForm = () => {
               </div>
             ))}
           </div>
-        )}
-        <button
+        )} */}
+
+
+        {/* <button
           onClick={() => setModalBind(true)}
           type="button"
           className="absolute right-[4rem] top-[40px] text-cinza-300 dark:text-cinza-600"
         >
           <span className="material-symbols-outlined">add</span>
-        </button>
+        </button> */}
+
+        
         <div className="flex items-end">
             <button
               onClick={generateTextWithIa}

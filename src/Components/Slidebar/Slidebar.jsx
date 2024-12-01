@@ -83,11 +83,11 @@ const Slidebar = () => {
             icon="star"
             name="Vips"
           />
-          <ButtonSlide
+          {/* <ButtonSlide
             onClick={() => setModalBind(true)}
             icon="edit_note"
             name="Binds"
-          />
+          /> */}
           <div className="h-[1px] w-full bg-cinza-400"></div>
           {themeLocal === 'ligth' ? (
             <ButtonSlide

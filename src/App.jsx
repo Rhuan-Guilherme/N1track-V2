@@ -28,6 +28,16 @@ function App() {
     }
   }, []);
 
+  React.useEffect(() => {
+    const currentVersion = '0.1.5'; 
+    const storedVersion = localStorage.getItem('app_version');
+
+    if (storedVersion !== currentVersion) {
+      localStorage.setItem('app_version', currentVersion);
+      window.location.reload();
+    }
+  })
+
   return (
     <BrowserRouter>
       <UserStorage>

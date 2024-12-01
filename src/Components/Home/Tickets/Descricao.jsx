@@ -6,14 +6,14 @@ const Descricao = ({ tiket }) => {
       {tiket.tipo === 'chamado' && (
         <>
           <p>
-            Prezados, o Sr(a). {tiket.nome.split(' ')[0]} entrou em contato{' '}
+            Prezados, Sr(a). {tiket.nome.split(' ')[0]} entrou em contato{' '}
             {tiket.informacao}
           </p>
           <p>Nome: {tiket.nome}</p>
           <p>Login: {tiket.login}</p>
           <p>Ramal: {tiket.ramal}</p>
-          <p>Local: {tiket.local}</p>
-          <p>Patrimônio: {tiket.patrimonio}</p>
+          {tiket.local ? <p>Local: {tiket.local}</p> : null}
+          {tiket.patrimonio ? <p>Patrimônio: {tiket.patrimonio}</p> : null}
         </>
       )}
 
